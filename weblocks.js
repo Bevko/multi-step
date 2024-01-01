@@ -1,4 +1,4 @@
-var firstNameField, coverageStep, coverageSelect, lastNameField, ageSelect, yearsOldStep, expectedSelect, phoneStep, expectedStep, genderSelect, genderStep, dateSelect, conditionsStep, birthDateStep, nameStep;
+var firstNameField, coverageStep, coverageSelect, lastNameField, ageSelect, yearsOldStep, expectedSelect, phoneStep, expectedStep, genderSelect, genderStep, dateSelectProba, conditionsStep, birthDateStep, nameStep;
 
 
 var we_tabs_next_button = '[bloc=next-btn]';
@@ -260,8 +260,8 @@ var we_tabs_next_button = '[bloc=next-btn]';
 
 
       }});
-$("[name=dateSelect]").on("input", function () {
-    dateSelect = getValueFromInput("dateSelect");
+$("[name=dateSelectProba]").on("input", function () {
+    dateSelectProba = getValueFromInput("dateSelectProba");
 
       nextTab = 'nameStep';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
@@ -282,9 +282,9 @@ $("[name=dateSelect]").on("input", function () {
 
       });
 
-    $("[name=dateSelect]").parent("label.w-radio").on("click", function () {
+    $("[name=dateSelectProba]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
-      dateSelect = getValueFromInput("dateSelect");
+      dateSelectProba = getValueFromInput("dateSelectProba");
 
       nextTab = 'nameStep';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
