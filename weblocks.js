@@ -1,4 +1,4 @@
-var dateSelectProba, coverageStep, coverageSelect, firstNameField, ageSelect, nameStep, lastNameField, yearsOldStep, expectedSelect, expectedStep, genderSelect, phoneStep, genderStep, conditionsStep;
+var firstNameField, coverageStep, coverageSelect, lastNameField, ageSelect, yearsOldStep, expectedSelect, phoneStep, expectedStep, genderSelect, genderStep, dateSelect, conditionsStep, birthDateStep, nameStep;
 
 
 var we_tabs_next_button = '[bloc=next-btn]';
@@ -241,7 +241,7 @@ var we_tabs_next_button = '[bloc=next-btn]';
     $('[bloc=next-btn]').on('click',function() {
   if($('.w--tab-active').attr('data-w-tab')=='conditionsStep') {
 
-        nextTab = 'nameStep';
+        nextTab = 'birthDateStep';
         we_activeTab = $(".w--tab-active").attr("data-w-tab");
         we_indexOfActiveTab = tabList.indexOf(we_activeTab);
         we_indexOfNextTab = we_indexOfActiveTab + 1;
@@ -256,7 +256,51 @@ var we_tabs_next_button = '[bloc=next-btn]';
         }
         $(we_tabs_next_button).addClass(we_tabs_active_class);
         $(".w--tab-active").attr('next-tab',nextTab);
-        $($('[data-w-tab=nameStep]')).attr('prev-tab',we_activeTab);
+        $($('[data-w-tab=birthDateStep]')).attr('prev-tab',we_activeTab);
 
 
       }});
+$("[name=dateSelect]").on("input", function () {
+    dateSelect = getValueFromInput("dateSelect");
+
+      nextTab = 'nameStep';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=nameStep]')).attr('prev-tab',we_activeTab);
+
+      });
+
+    $("[name=dateSelect]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      dateSelect = getValueFromInput("dateSelect");
+
+      nextTab = 'nameStep';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=nameStep]')).attr('prev-tab',we_activeTab);
+
+      });
