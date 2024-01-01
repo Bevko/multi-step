@@ -1,4 +1,4 @@
-var firstNameField, coverageStep, coverageSelect, lastNameField, ageSelect, yearsOldStep, expectedSelect, phoneStep, expectedStep, genderSelect, genderStep, dateSelect, conditionsStep, birthDateStep, nameStep;
+var coverageStep, coverageSelect, ageSelect, yearsOldStep, expectedSelect, expectedStep, genderSelect, genderStep, conditionsStep, dateSelect, firstNameField, birthDateStep, nameStep, lastNameField, phoneStep;
 
 
 var we_tabs_next_button = '[bloc=next-btn]';
@@ -304,3 +304,99 @@ $("[name=dateSelect]").on("input", function () {
       $($('[data-w-tab=nameStep]')).attr('prev-tab',we_activeTab);
 
       });
+    $("[name=firstNameField]").on("input", function () {
+    firstNameField = getValueFromInput("firstNameField");
+      if (firstNameField != null && lastNameField != null) {
+
+        nextTab = 'phoneStep';
+        we_activeTab = $(".w--tab-active").attr("data-w-tab");
+        we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+        we_indexOfNextTab = we_indexOfActiveTab + 1;
+        we_indexOfPrevTab = we_indexOfActiveTab - 1;
+        we_prevTab = tabList[we_indexOfPrevTab];
+        we_amountOfTabs = tabList.length;
+
+        if (we_indexOfNextTab < we_amountOfTabs) {
+          tabList[we_indexOfNextTab] = nextTab;
+        } else {
+          tabList.push(nextTab);
+        }
+        $(we_tabs_next_button).addClass(we_tabs_active_class);
+        $(".w--tab-active").attr('next-tab',nextTab);
+        $($('[data-w-tab=phoneStep]')).attr('prev-tab',we_activeTab);
+
+        }
+});
+
+    $("[name=firstNameField]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      firstNameField = getValueFromInput("firstNameField");
+        if (firstNameField != null && lastNameField != null) {
+
+        nextTab = 'phoneStep';
+        we_activeTab = $(".w--tab-active").attr("data-w-tab");
+        we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+        we_indexOfNextTab = we_indexOfActiveTab + 1;
+        we_indexOfPrevTab = we_indexOfActiveTab - 1;
+        we_prevTab = tabList[we_indexOfPrevTab];
+        we_amountOfTabs = tabList.length;
+
+        if (we_indexOfNextTab < we_amountOfTabs) {
+          tabList[we_indexOfNextTab] = nextTab;
+        } else {
+          tabList.push(nextTab);
+        }
+        $(we_tabs_next_button).addClass(we_tabs_active_class);
+        $(".w--tab-active").attr('next-tab',nextTab);
+        $($('[data-w-tab=phoneStep]')).attr('prev-tab',we_activeTab);
+
+        }
+});
+    $("[name=lastNameField]").on("input", function () {
+    lastNameField = getValueFromInput("lastNameField");
+      if (firstNameField != null && lastNameField != null) {
+
+        nextTab = 'phoneStep';
+        we_activeTab = $(".w--tab-active").attr("data-w-tab");
+        we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+        we_indexOfNextTab = we_indexOfActiveTab + 1;
+        we_indexOfPrevTab = we_indexOfActiveTab - 1;
+        we_prevTab = tabList[we_indexOfPrevTab];
+        we_amountOfTabs = tabList.length;
+
+        if (we_indexOfNextTab < we_amountOfTabs) {
+          tabList[we_indexOfNextTab] = nextTab;
+        } else {
+          tabList.push(nextTab);
+        }
+        $(we_tabs_next_button).addClass(we_tabs_active_class);
+        $(".w--tab-active").attr('next-tab',nextTab);
+        $($('[data-w-tab=phoneStep]')).attr('prev-tab',we_activeTab);
+
+        }
+});
+
+    $("[name=lastNameField]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      lastNameField = getValueFromInput("lastNameField");
+        if (firstNameField != null && lastNameField != null) {
+
+        nextTab = 'phoneStep';
+        we_activeTab = $(".w--tab-active").attr("data-w-tab");
+        we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+        we_indexOfNextTab = we_indexOfActiveTab + 1;
+        we_indexOfPrevTab = we_indexOfActiveTab - 1;
+        we_prevTab = tabList[we_indexOfPrevTab];
+        we_amountOfTabs = tabList.length;
+
+        if (we_indexOfNextTab < we_amountOfTabs) {
+          tabList[we_indexOfNextTab] = nextTab;
+        } else {
+          tabList.push(nextTab);
+        }
+        $(we_tabs_next_button).addClass(we_tabs_active_class);
+        $(".w--tab-active").attr('next-tab',nextTab);
+        $($('[data-w-tab=phoneStep]')).attr('prev-tab',we_activeTab);
+
+        }
+});
