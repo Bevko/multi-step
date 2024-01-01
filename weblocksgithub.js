@@ -1,4 +1,28 @@
-var coverageStep, coverageSelect, ageSelect, yearsOldStep, expectedStep;
+var coverageStep, coverageSelect, ageSelect, yearsOldStep, expectedSelect, phoneStep, expectedStep, genderSelect, lastNameField, firstNameField, genderStep, conditionsStep, dateSelect, birthDateStep, nameStep, phoneSelect;
+
+// Describe this function...
+function name_field_check() {
+  if (firstNameField != null && lastNameField != null) {
+
+        nextTab = 'phoneStep';
+        we_activeTab = $(".w--tab-active").attr("data-w-tab");
+        we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+        we_indexOfNextTab = we_indexOfActiveTab + 1;
+        we_indexOfPrevTab = we_indexOfActiveTab - 1;
+        we_prevTab = tabList[we_indexOfPrevTab];
+        we_amountOfTabs = tabList.length;
+
+        if (we_indexOfNextTab < we_amountOfTabs) {
+          tabList[we_indexOfNextTab] = nextTab;
+        } else {
+          tabList.push(nextTab);
+        }
+        $(we_tabs_next_button).addClass(we_tabs_active_class);
+        $(".w--tab-active").attr('next-tab',nextTab);
+        $($('[data-w-tab=phoneStep]')).attr('prev-tab',we_activeTab);
+
+        }
+}
 
 
 var we_tabs_next_button = '[bloc=next-btn]';
@@ -150,3 +174,201 @@ var we_tabs_next_button = '[bloc=next-btn]';
       $($('[data-w-tab=expectedStep]')).attr('prev-tab',we_activeTab);
 
       });
+    $("[name=expectedSelect]").on("input", function () {
+    expectedSelect = getValueFromInput("expectedSelect");
+
+      nextTab = 'genderStep';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=genderStep]')).attr('prev-tab',we_activeTab);
+
+      });
+
+    $("[name=expectedSelect]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      expectedSelect = getValueFromInput("expectedSelect");
+
+      nextTab = 'genderStep';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=genderStep]')).attr('prev-tab',we_activeTab);
+
+      });
+    $("[name=genderSelect]").on("input", function () {
+    genderSelect = getValueFromInput("genderSelect");
+
+      nextTab = 'conditionsStep';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=conditionsStep]')).attr('prev-tab',we_activeTab);
+
+      });
+
+    $("[name=genderSelect]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      genderSelect = getValueFromInput("genderSelect");
+
+      nextTab = 'conditionsStep';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=conditionsStep]')).attr('prev-tab',we_activeTab);
+
+      });
+    $('[bloc=next-btn]').on('click',function() {
+  if($('.w--tab-active').attr('data-w-tab')=='conditionsStep') {
+
+        nextTab = 'birthDateStep';
+        we_activeTab = $(".w--tab-active").attr("data-w-tab");
+        we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+        we_indexOfNextTab = we_indexOfActiveTab + 1;
+        we_indexOfPrevTab = we_indexOfActiveTab - 1;
+        we_prevTab = tabList[we_indexOfPrevTab];
+        we_amountOfTabs = tabList.length;
+
+        if (we_indexOfNextTab < we_amountOfTabs) {
+          tabList[we_indexOfNextTab] = nextTab;
+        } else {
+          tabList.push(nextTab);
+        }
+        $(we_tabs_next_button).addClass(we_tabs_active_class);
+        $(".w--tab-active").attr('next-tab',nextTab);
+        $($('[data-w-tab=birthDateStep]')).attr('prev-tab',we_activeTab);
+
+
+      }});
+$("[name=dateSelect]").on("input", function () {
+    dateSelect = getValueFromInput("dateSelect");
+
+      nextTab = 'nameStep';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=nameStep]')).attr('prev-tab',we_activeTab);
+
+      });
+
+    $("[name=dateSelect]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      dateSelect = getValueFromInput("dateSelect");
+
+      nextTab = 'nameStep';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=nameStep]')).attr('prev-tab',we_activeTab);
+
+      });
+    $("[name=firstNameField]").on("input", function () {
+    firstNameField = getValueFromInput("firstNameField");
+      name_field_check();
+});
+
+    $("[name=firstNameField]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      firstNameField = getValueFromInput("firstNameField");
+        name_field_check();
+});
+    $("[name=lastNameField]").on("input", function () {
+    lastNameField = getValueFromInput("lastNameField");
+      name_field_check();
+});
+
+    $("[name=lastNameField]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      lastNameField = getValueFromInput("lastNameField");
+        name_field_check();
+});
+    $("[name=phoneSelect]").on("input", function () {
+    phoneSelect = getValueFromInput("phoneSelect");
+      var form = document.querySelector("[data-name=Multi-steps form]");
+    form.addEventListener("submit", handlerCallback, true);
+    $("[data-name=Multi-steps form] [type=submit]").css({ outline: "none" });
+    function handlerCallback(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      $("[data-name=Multi-steps form] [type=submit]").val($("[data-name=Multi-steps form] [type=submit]").attr("data-wait"));
+
+    }});
+
+    $("[name=phoneSelect]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      phoneSelect = getValueFromInput("phoneSelect");
+        var form = document.querySelector("[data-name=Multi-steps form]");
+    form.addEventListener("submit", handlerCallback, true);
+    $("[data-name=Multi-steps form] [type=submit]").css({ outline: "none" });
+    function handlerCallback(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      $("[data-name=Multi-steps form] [type=submit]").val($("[data-name=Multi-steps form] [type=submit]").attr("data-wait"));
+
+    }});
